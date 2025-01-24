@@ -1,80 +1,26 @@
 {
   "name": "ember-redux",
   "version": "6.0.0",
-  "description": "ember-cli addon that provides simple redux bindings for ember.js",
+  "private": true,
+  "repository": "",
+  "license": "MIT",
+  "author": "",
+  "workspaces": [
+    "packages/addon",
+    "packages/test-app"
+  ],
   "scripts": {
-    "build": "ember build",
-    "lint:js": "eslint .",
-    "start": "ember serve",
-    "test": "ember try:each"
-  },
-  "homepage": "https://github.com/ember-redux/ember-redux",
-  "bugs": {
-    "url": "https://github.com/ember-redux/ember-redux/issues"
-  },
-  "engines": {
-    "node": ">= 8"
+    "build": "yarn workspace ember-redux run build",
+    "lint": "yarn workspaces run lint",
+    "lint:fix": "yarn workspaces run lint:fix",
+    "prepare": "yarn build",
+    "start": "concurrently 'npm:start:*' --restart-after 5000 --prefix-colors cyan,white,yellow",
+    "start:addon": "yarn workspace ember-redux run start",
+    "start:test-app": "yarn workspace test-app run start",
+    "test": "yarn workspaces run test"
   },
   "devDependencies": {
-    "@ember/jquery": "^2.0.0",
-    "@ember/optional-features": "^1.1.0",
-    "@glimmer/component": "^1.0.0",
-    "babel-eslint": "^10.0.3",
-    "broccoli-asset-rev": "^3.0.0",
-    "ember-auto-import": "^2.10.0",
-    "ember-cli": "4.12.3",
-    "ember-cli-dependency-checker": "^3.2.0",
-    "ember-cli-eslint": "^5.1.0",
-    "ember-cli-htmlbars": "^4.2.0",
-    "ember-cli-inject-live-reload": "^2.0.1",
-    "ember-cli-shims": "^1.2.0",
-    "ember-cli-sri": "^2.1.0",
-    "ember-cli-uglify": "^3.0.0",
-    "ember-compatibility-helpers": "^1.1.2",
-    "ember-disable-prototype-extensions": "^1.1.2",
-    "ember-export-application-global": "^2.0.1",
-    "ember-load-initializers": "^2.1.1",
-    "ember-maybe-import-regenerator": "0.1.6",
-    "ember-qunit": "^4.6.0",
-    "ember-qunit-assert-helpers": "^0.2.2",
-    "ember-redux-thunk-shim": "^2.5.0",
-    "ember-resolver": "^7.0.0",
-    "ember-source": "4.12.4",
-    "ember-symbol-observable": "^1.0.2",
-    "ember-try": "^1.4.0",
-    "eslint-plugin-ember": "^7.7.1",
-    "eslint-plugin-node": "^10.0.0",
-    "loader.js": "4.2.3",
-    "redux-saga": "^0.16.0",
-    "redux-thunk": "2.3.0"
-  },
-  "keywords": [
-    "ember-addon",
-    "data",
-    "ember-cli",
-    "ember",
-    "redux"
-  ],
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ember-redux/ember-redux"
-  },
-  "license": "MIT",
-  "author": "Toran Billups toranb@gmail.com",
-  "directories": {
-    "doc": "doc",
-    "test": "tests"
-  },
-  "dependencies": {
-    "ember-auto-import": "^2.10.0",
-    "ember-cli-babel": "^7.13.0",
-    "redux": "^4.0.0",
-    "webpack": "5.97.1"
-  },
-  "ember": {
-    "edition": "octane"
-  },
-  "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "concurrently": "^7.6.0",
+    "prettier": "^2.8.3"
   }
 }

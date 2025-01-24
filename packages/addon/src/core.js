@@ -1,4 +1,3 @@
-import { run } from '@ember/runloop';
 import { assert } from '@ember/debug';
 import { computed, getProperties, defineProperty } from '@ember/object';
 import { bindActionCreators } from 'redux';
@@ -94,9 +93,7 @@ export function core(stateToComputed, dispatchToActions) {
       props = newProps;
 
       if (notifyProperties.length > 0) {
-        run.join(() => {
-          notifyProperties.forEach(name => this.notifyPropertyChange(name));
-        });
+        notifyProperties.forEach((name) => this.notifyPropertyChange(name));
       }
     };
 

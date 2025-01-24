@@ -1,0 +1,73 @@
+{
+  "name": "ember-redux",
+  "version": "6.0.0",
+  "description": "ember-cli addon that provides simple redux bindings for ember.js",
+  "scripts": {
+    "build": "rollup --config",
+    "lint:js": "eslint .",
+    "prepack": "rollup --config",
+    "start": "rollup --config --watch",
+    "test": "echo 'A v2 addon does not have tests, run tests in test-app'"
+  },
+  "homepage": "https://github.com/ember-redux/ember-redux",
+  "bugs": {
+    "url": "https://github.com/ember-redux/ember-redux/issues"
+  },
+  "engines": {
+    "node": ">= 8"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.20.12",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-proposal-decorators": "^7.20.13",
+    "@embroider/addon-dev": "^3.0.0",
+    "@rollup/plugin-babel": "^6.0.3",
+    "rollup": "^3.12.0",
+    "rollup-plugin-copy": "^3.4.0"
+  },
+  "keywords": [
+    "ember-addon",
+    "data",
+    "ember-cli",
+    "ember",
+    "redux"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ember-redux/ember-redux"
+  },
+  "license": "MIT",
+  "author": "Toran Billups toranb@gmail.com",
+  "directories": {
+    "doc": "doc",
+    "test": "tests"
+  },
+  "dependencies": {
+    "@embroider/addon-shim": "^1.8.4",
+    "redux": "^4.0.0",
+    "webpack": "5.97.1"
+  },
+  "ember": {
+    "edition": "octane"
+  },
+  "ember-addon": {
+    "app-js": {
+      "./enhancers/index.js": "./dist/_app_/enhancers/index.js",
+      "./middleware/index.js": "./dist/_app_/middleware/index.js",
+      "./reducers/index.js": "./dist/_app_/reducers/index.js",
+      "./services/redux.js": "./dist/_app_/services/redux.js"
+    },
+    "main": "addon-main.cjs",
+    "type": "addon",
+    "version": 2
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./*": "./dist/*.js",
+    "./addon-main.js": "./addon-main.cjs"
+  },
+  "files": [
+    "addon-main.cjs",
+    "dist"
+  ]
+}
