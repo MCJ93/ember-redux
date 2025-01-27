@@ -9,6 +9,9 @@
     "packages/addon",
     "packages/test-app"
   ],
+  "files": [
+    "packages/addon/*"
+  ],
   "scripts": {
     "build": "yarn workspace ember-redux run build",
     "lint": "yarn workspaces run lint",
