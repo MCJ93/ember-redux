@@ -65,6 +65,7 @@
   },
   "files": [
     "addon-main.cjs",
-    "dist"
+    "dist",
+    "package.json"
   ]
 }
